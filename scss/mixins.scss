@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 $sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
 
 // Media queries
@@ -11,3 +13,17 @@ $sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
   }
 }
 
+@mixin font-main-regular {
+  font-family: $main-regular;
+	font-weight: 300;
+}
+
+@mixin font-main-medium {
+  font-family: $main-medium;
+	font-weight: 500;
+}
+
+@mixin font-main-bold {
+  font-family: $main-bold;
+	font-weight: bold;
+}
