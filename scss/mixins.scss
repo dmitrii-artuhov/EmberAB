@@ -27,3 +27,11 @@ $sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
   font-family: $main-bold;
 	font-weight: bold;
 }
+
+
+@mixin basic-card {
+  min-height: 85px;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  padding: 10px;
+}

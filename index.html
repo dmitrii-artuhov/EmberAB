@@ -21,16 +21,209 @@
 	<link rel="stylesheet" href="./css/mixins.css">
 	<link rel="stylesheet" href="./css/variables.css">
 	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/configurator.css">
+
+	<!-- IRS -->
+	<!--Plugin CSS file with desired skin-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+	
+	<!--jQuery-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<!--Plugin JavaScript file-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
 </head>
 <body>
 	<section class="cloud-hosting">
 		<div class="container">
-			<h1 class="cloud-hosting__title">Cloud hosting, nyttja redan befintliga serverkluster</h1>
-			<p class="cloud-hosting__info">Med Virtuella Privata Servrar (VPS) är du garanterad resurser i ett stort distribuerat serverkluster, ett driftsäkert och mycket kostnadseffektivt. Istället för kostsam överkapacitet finns en tillgänglig pool att använda sig av när det krävs, det benämns ofta som elastisk drift eller hosting kort och gott.
-			</p>
+			<div class="cloud-hosting__wrapper">
+				<h1 class="cloud-hosting__title">Cloud hosting, nyttja redan befintliga serverkluster</h1>
+				<p class="cloud-hosting__info">Med Virtuella Privata Servrar (VPS) är du garanterad resurser i ett stort distribuerat serverkluster, ett driftsäkert och mycket kostnadseffektivt. Istället för kostsam överkapacitet finns en tillgänglig pool att använda sig av när det krävs, det benämns ofta som elastisk drift eller hosting kort och gott.
+				</p>
 
-			<button class="button light-button">Vill du ha hjälp att hitta rätt lösning?</button>
+				<button class="button button-light">Vill du ha hjälp att hitta rätt lösning?</button>
+			</div>
 		</div>
 	</section>
+
+
+	<section class="configurator">
+		<div class="container">
+			<form onsubmit="(e) => e.preventDefault();" action="" class="configurator__form">
+				<!-- CPU -->
+				<div class="configurator__block configurator__cpu">
+					<div class="configurator__header">
+						<h2>CPU</h2>
+						<p>Välj cpu-alternativ</p>
+					</div>
+					<div class="configurator__content configurator__content-cpu">
+						<div class="configurator__cpu-card">
+							<p>CPU Name</p>
+							<span>6 Cores, 12 Threads, 3.4 GHz</span>
+						</div>
+						<div class="configurator__cpu-card">
+							<p>CPU Name</p>
+							<span>6 Cores, 12 Threads, 3.4 GHz</span>
+						</div>
+						<div class="configurator__cpu-card">
+							<p>CPU Name</p>
+							<span>6 Cores, 12 Threads, 3.4 GHz</span>
+						</div>
+						<div class="configurator__cpu-card">
+							<p>CPU Name</p>
+							<span>6 Cores, 12 Threads, 3.4 GHz</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="configurator__block configurator__double">
+					<!-- Memory -->
+					<div class="configurator__block configurator__memory">
+						<div class="configurator__header">
+							<h2>Minne</h2>
+							<p>Välj minnesstorlek</p>
+						</div>
+						<div class="configurator__content">
+							<div class="custom-select">
+								<img src="./imgs/chevron.svg" alt="">
+								<select name="memory" id="configurator-field-memory" class="configurator__select">
+									<option value="32">32 GB</option>
+									<option value="64">64 GB</option>
+									<option value="128">128 GB</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<!-- Disk Space -->
+					<div class="configurator__block configurator__disk">
+						<div class="configurator__header">
+							<h2>Lagring</h2>
+							<p>Välj lagringsstorlek</p>
+						</div>
+						<div class="configurator__content">
+							<div class="configurator__radios">
+								<label class="custom-radio" for="disk-ssd">
+									<input id="disk-ssd" name="disk-space" type="radio">
+									<span class="checkmark"></span>
+									<span>SSD</span>
+								</label>
+
+								<label class="custom-radio" for="disk-hdd">
+									<input id="disk-hdd" name="disk-space" type="radio">
+									<span class="checkmark"></span>
+									<span>HDD</span>
+								</label>
+							</div>
+							<div class="custom-select">
+								<img src="./imgs/chevron.svg" alt="">
+								<select name="disk" id="configurator-field-disk" class="configurator__select">
+									<option value="32">32 GB</option>
+									<option value="64">64 GB</option>
+									<option value="128">128 GB</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- OS -->
+				<div class="configurator__block configurator__os">
+					<div class="configurator__header">
+						<h2>Operativ system</h2>
+						<p>Välj OS</p>
+					</div>
+					<div class="configurator__content configurator__content-os">
+						<div class="configurator__os-card">
+							<p>CentOS</p>
+							<div class="custom-select">
+								<img src="./imgs/chevron.svg" alt="">
+								<select class="configurator__select" name="os">
+									<option value="1">CentOS-8</option>
+									<option value="2">CentOS-7</option>
+									<option value="3">CentOS-6</option>
+								</select>
+							</div>
+						</div>
+						<div class="configurator__os-card">
+							<p>Ubuntu</p>
+							<div class="custom-select">
+								<img src="./imgs/chevron.svg" alt="">
+								<select class="configurator__select" name="os">
+									<option value="1">Ubuntu 20.18-focal</option>
+									<option value="2">Ubuntu 20.17-bionic</option>
+								</select>
+							</div>
+						</div>
+						<div class="configurator__os-card">
+							<p>Debian</p>
+							<div class="custom-select">
+								<img src="./imgs/chevron.svg" alt="">
+								<select class="configurator__select" name="os">
+									<option value="1">Debian-10-buster</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Port speed -->
+				<div class="configurator__block configurator__port-speed">
+					<div class="configurator__header">
+						<h2>Hamnens hastighet</h2>
+						<p>Välj porthastighet</p>
+					</div>
+					<div class="configurator__content">
+						<input data-postfix="Gbps" type="text" class="js-range-slider" name="my_range" value="" />
+					</div>
+				</div>
+
+				<!-- Billing period -->
+				<div class="configurator__block configurator__billing">
+					<div class="configurator__header">
+						<h2>Faktureringsperiod</h2>
+						<p>Välj faktureringsplan</p>
+					</div>
+					<div class="configurator__content">
+						<div class="configurator__radios">
+							<label class="custom-radio" for="monthly">
+								<input id="monthly" name="billing" type="radio">
+								<span class="checkmark"></span>
+								<span>Monthly</span>
+							</label>
+
+							<label class="custom-radio" for="semiannually">
+								<input id="semiannually" name="billing" type="radio">
+								<span class="checkmark"></span>
+								<span>Semiannually</span>
+							</label>
+
+							<label class="custom-radio" for="annually">
+								<input id="annually" name="billing" type="radio">
+								<span class="checkmark"></span>
+								<span>Annually</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<!-- Total -->
+				<div class="configurator__block configurator__total">
+					<div class="configurator__header">
+						<h2>Betalning</h2>
+						<p>Total: <span>12 545 kr</span></p>
+					</div>
+					<div class="configurator__content">
+						<button id="submit-button" class="button button-dark">
+							Vidare till kassa och betalning
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+
+	<script src="./js/index.js"></script>
 </body>
 </html>

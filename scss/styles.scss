@@ -5,6 +5,7 @@
 html, body {
 	margin: 0;
 	padding: 0;
+	@include font-main-regular;
 }
 
 .container {
@@ -13,7 +14,6 @@ html, body {
 	padding: 0 20px;
 }
 
-
 .button {
 	border: none;
 	outline: none;
@@ -21,9 +21,26 @@ html, body {
 	display: flex;
 	text-align: center;
 	align-items: center;
-	padding: 10px 40px;
+	padding: 15px 40px;
 	box-sizing: border-box;
 
 	@include font-main-regular;
-	font-size: $regular-font-size;
+	font-weight: 600;
+	font-size: $button-fot-size;
+
+	&-light {
+		background-color: $leading-color;
+	}
+
+	&-dark {
+		background-color: $dark-color;
+		color: #fff;
+		transition: .2s ease-in-out;
+
+		&:hover {
+			background-color: $leading-color;
+			color: $dark-color;
+		}
+	}
 }
+
